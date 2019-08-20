@@ -27,6 +27,31 @@ class MyTestCase(unittest.TestCase):
         else:
             print(driver.title)
 
+    def test_Login(self):
+        driver = self.driver
+        key = open("key.txt").read().splitlines()
+        # driver.get("https://fictionlog.co/")
+        driver.find_element_by_xpath("//div[@class='Navbar__NavbarRightMenuBox-sc-1gjhe9u-8 glkmWR']").click()
+        username = driver.find_element_by_id("login-username")
+        if username:
+            print("login box is founded")
+        else:
+            print("login box is not founded")
+        username.send_keys(key[0])
+        pwd = driver.find_element_by_id("login-password")
+        pwd.send_keys(key[1])
+        driver.find_element_by_xpath("//div[@class='LoginForm__RowWrapper-sc-1yidlb5-4 bxQUXd']/button[1]").click()
+
+        driver.find_element_by_xpath("//div[@class='Avatar__AvatorBox-sc-1u3bppm-0 gGGrfo']").click()
+        element = driver.find_element_by_xpath("//div[@class='NavbarProfileDropdown__ProfileId-sy9wmn-5 jwRExF']")
+        if "@"+key[0] in element.text:
+            print("Login successful")
+        else:
+            print("Fail")
+
+
+    # def test_SearchIcon(self):
+    #     pass
 
 
     def tearDown(self):
