@@ -79,7 +79,7 @@ class MyTestCase(unittest.TestCase):
                     "//div[@class='container Search__FeedBox-b4vuer-0 daudpn']/div[2]/div[1]/a[1]/div[1]/div[2]/div[1]/div[1]").text
 
             print(first)
-            assert msg in first
+            assert msg in first,"maybe this msg be not found or something wrong"
 
         search("มังกร")
         search("แมว")
@@ -103,9 +103,26 @@ class MyTestCase(unittest.TestCase):
             driver.implicitly_wait(200)
             element = driver.find_element_by_xpath("//div[@class='container Search__FeedBox-b4vuer-0 daudpn']/div[2]/div[1]")
 
-            assert element.text == "ไม่พบนิยาย"
+            assert element.text == "ไม่พบนิยาย","maybe this msg can found in novel's name or something wrong"
 
         search("123456789878")
+
+    def test_loginFail(self):
+        driver = self.driver
+
+        driver.find_element_by_xpath("//div[@class='Navbar__NavbarRightMenuBox-sc-1gjhe9u-8 glkmWR']").click()
+        username = driver.find_element_by_id("login-username")
+        if username:
+            print("login box is founded")
+        else:
+            print("login box is not found")
+        username.send_keys("key[0]")
+        pwd = driver.find_element_by_id("login-password")
+        pwd.send_keys("key[1]")
+        driver.find_element_by_xpath("//div[@class='LoginForm__RowWrapper-sc-1yidlb5-4 bxQUXd']/button[1]").click()
+
+        error = driver.find_element_by_xpath("//div[@class='Title__Text-sc-1jzccie-0 Title__H3-sc-1jzccie-3 jNtoco']")
+        assert error.text == "เกิดข้อผิดพลาด","this username and password ขcan login to website"
 
     def tearDown(self):
         self.driver.close()

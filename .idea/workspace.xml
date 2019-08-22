@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd9d40cb-46b0-4ee2-8aa5-f330e3809918" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.MyTestCase.test_SearchNotFound">
+  <component name="RunManager" selected="Python tests.Unittests for test.MyTestCase">
     <configuration name="Unittests for test.MyTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="test_fictionlog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,20 +74,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test.MyTestCase.test_Login&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test.MyTestCase.test_OpenWebSite" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="test_fictionlog" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.MyTestCase.test_OpenWebSite&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -118,13 +105,27 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for test.MyTestCase.test_loginFail" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="test_fictionlog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.MyTestCase.test_loginFail&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test.MyTestCase" />
+        <item itemvalue="Python tests.Unittests for test.MyTestCase.test_loginFail" />
         <item itemvalue="Python tests.Unittests for test.MyTestCase.test_SearchNotFound" />
         <item itemvalue="Python tests.Unittests for test.MyTestCase.test_SearchIcon" />
         <item itemvalue="Python tests.Unittests for test.MyTestCase.test_Login" />
-        <item itemvalue="Python tests.Unittests for test.MyTestCase" />
-        <item itemvalue="Python tests.Unittests for test.MyTestCase.test_OpenWebSite" />
       </list>
     </recent_temporary>
   </component>
