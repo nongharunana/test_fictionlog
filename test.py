@@ -1,9 +1,8 @@
 import unittest
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.keys import Keys
+
+
 
 class MyTestCase(unittest.TestCase):
 
@@ -22,7 +21,7 @@ class MyTestCase(unittest.TestCase):
     def test_OpenWebSite(self):
         driver = self.driver
         # driver.get("https://fictionlog.co/")
-        if "Fictionlog | นิยายออนไลน์ สุดมันส์ สดใหม่ ฟินทุกรส ครบทุกอารมณ์!" in  driver.title:
+        if "Fictionlog | นิยายออนไลน์ สุดมันส์ สดใหม่ ฟินทุกรส ครบทุกอารมณ์!" in driver.title:
             print(driver.title)
         else:
             print(driver.title)
@@ -30,13 +29,12 @@ class MyTestCase(unittest.TestCase):
     def test_Login(self):
         driver = self.driver
         key = open("key.txt").read().splitlines()
-        # driver.get("https://fictionlog.co/")
         driver.find_element_by_xpath("//div[@class='Navbar__NavbarRightMenuBox-sc-1gjhe9u-8 glkmWR']").click()
         username = driver.find_element_by_id("login-username")
         if username:
             print("login box is founded")
         else:
-            print("login box is not founded")
+            print("login box is not found")
         username.send_keys(key[0])
         pwd = driver.find_element_by_id("login-password")
         pwd.send_keys(key[1])
@@ -44,14 +42,49 @@ class MyTestCase(unittest.TestCase):
 
         driver.find_element_by_xpath("//div[@class='Avatar__AvatorBox-sc-1u3bppm-0 gGGrfo']").click()
         element = driver.find_element_by_xpath("//div[@class='NavbarProfileDropdown__ProfileId-sy9wmn-5 jwRExF']")
-        if "@"+key[0] in element.text:
+        if "@" + key[0] in element.text:
             print("Login successful")
         else:
             print("Fail")
 
+    def test_SearchFound(self):
+        driver = self.driver
+        driver.find_element_by_xpath("//div[@class='Navbar__NavbarLeftMenuBox-sc-1gjhe9u-7 SwjX']/a[1]").click()
+        element = driver.find_element_by_xpath("//*[@class='EmptyWrapper-sc-88zszt-0 boylLs']")
+        if 'ค้นหานิยาย, E-book และผู้ใช้ ได้จาก "กล่องค้นหา" ด้านบน' in element.text:
+            print("search box is founded")
+        else:
+            print("search box is not found")
 
-    # def test_SearchIcon(self):
-    #     pass
+        def search(msg):
+
+            first = ""
+            driver.find_element_by_xpath("//*[@class='SearchForm__ClearTextButton-sc-1utrbvs-0 jPBmQo']").click()
+            driver.find_element_by_xpath("//input[@class='SearchForm__Input-sc-1utrbvs-1 dxqRDK']").send_keys(msg,
+                                                                                                              Keys.ENTER)
+            driver.implicitly_wait(300)
+
+
+
+            # print("1")
+            has = driver.find_element_by_xpath(
+                "//div[@class='container Search__FeedBox-b4vuer-0 daudpn']/div[2]/div[1]/a[1]/div[1]/div[2]/div[1]/div[1]").is_displayed()
+
+            while has and msg not in first:
+                # print("3")
+                driver.implicitly_wait(300)
+                first = driver.find_element_by_xpath(
+                    "//div[@class='container Search__FeedBox-b4vuer-0 daudpn']/div[2]/div[1]/a[1]/div[1]/div[2]/div[1]/div[1]").text
+
+            print(first)
+            assert msg in first
+
+        search("มังกร")
+        search("แมว")
+        search("แพทย์")
+        search("จีน")
+        search("เกิดใหม่")
+
 
 
     def tearDown(self):
