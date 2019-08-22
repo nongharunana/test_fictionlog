@@ -85,7 +85,25 @@ class MyTestCase(unittest.TestCase):
         search("จีน")
         search("เกิดใหม่")
 
+    def test_SearchNotFound(self):
+        driver = self.driver
+        driver.find_element_by_xpath("//div[@class='Navbar__NavbarLeftMenuBox-sc-1gjhe9u-7 SwjX']/a[1]").click()
+        element = driver.find_element_by_xpath("//*[@class='EmptyWrapper-sc-88zszt-0 boylLs']")
+        if 'ค้นหานิยาย, E-book และผู้ใช้ ได้จาก "กล่องค้นหา" ด้านบน' in element.text:
+            print("search box is founded")
+        else:
+            print("search box is not found")
 
+        def search(msg):
+            driver.find_element_by_xpath("//*[@class='SearchForm__ClearTextButton-sc-1utrbvs-0 jPBmQo']").click()
+            driver.find_element_by_xpath("//input[@class='SearchForm__Input-sc-1utrbvs-1 dxqRDK']").send_keys(msg,
+                                                                                                              Keys.ENTER)
+            driver.implicitly_wait(200)
+            element = driver.find_element_by_xpath("//div[@class='container Search__FeedBox-b4vuer-0 daudpn']/div[2]/div[1]")
+
+            assert element.text == "ไม่พบนิยาย"
+
+        search("123456789878")
 
     def tearDown(self):
         self.driver.close()

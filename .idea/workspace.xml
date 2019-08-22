@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd9d40cb-46b0-4ee2-8aa5-f330e3809918" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +47,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.MyTestCase.test_SearchIcon">
+  <component name="RunManager" selected="Python tests.Unittests for test.MyTestCase.test_SearchNotFound">
     <configuration name="Unittests for test.MyTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="test_fictionlog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,8 +120,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test.MyTestCase.test_SearchIcon" />
         <item itemvalue="Python tests.Unittests for test.MyTestCase.test_SearchNotFound" />
+        <item itemvalue="Python tests.Unittests for test.MyTestCase.test_SearchIcon" />
         <item itemvalue="Python tests.Unittests for test.MyTestCase.test_Login" />
         <item itemvalue="Python tests.Unittests for test.MyTestCase" />
         <item itemvalue="Python tests.Unittests for test.MyTestCase.test_OpenWebSite" />
