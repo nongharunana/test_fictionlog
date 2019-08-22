@@ -69,6 +69,8 @@ class MyTestCase(unittest.TestCase):
             # print("1")
             has = driver.find_element_by_xpath(
                 "//div[@class='container Search__FeedBox-b4vuer-0 daudpn']/div[2]/div[1]/a[1]/div[1]/div[2]/div[1]/div[1]").is_displayed()
+            # first = driver.find_element_by_xpath(
+            #     "//div[@class='container Search__FeedBox-b4vuer-0 daudpn']/div[2]/div[1]/a[1]/div[1]/div[2]/div[1]/div[1]").text
 
             while has and msg not in first:
                 # print("3")
